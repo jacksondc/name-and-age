@@ -21,7 +21,7 @@ input, button {
 }
 
 button {
-  display:block;
+  display:inline-block;
   width:100%;
   -webkit-transition: background-color 0.2s ease-in-out;
   -moz-transition: background-color 0.2s ease-in-out;
