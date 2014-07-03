@@ -42,9 +42,9 @@ $(document).ready(function() {
     var year = thisYear - age;
 
     if(year < 1848)
-      alert("Too old!");
+      $('#name').html('Too old!').removeClass('placeholder');
     else if(year > 2013)
-      alert("Too young!");
+      $('#name').html('Too young!').removeClass('placeholder');
     else
       $('#name').html(getName(year, gender)).removeClass('placeholder');
   });
