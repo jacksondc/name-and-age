@@ -150,7 +150,7 @@ h1 {
 }
 
 #main {
-  background: url('../img/bg.png') no-repeat center center fixed;
+  background: url('../img/bg.png') no-repeat bottom center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -252,11 +252,11 @@ input[type=checkbox]:checked + label:after {
 }
 
 input[type=checkbox] + label:hover:before {
-  background-color: #3682AB;
+  background-color: #69B5DE;
 }
 
 input[type=checkbox] + label:hover:after {
-  background-color: #B9608B;
+  background-color: #EC93BE;
 }
 
 
