@@ -59,10 +59,6 @@ input[type=number] {
     color:    #555;
 }
 
-.placeholder {
-  color:#555;
-}
-
 body, html {
   height:100%;
 }
@@ -116,6 +112,7 @@ h2 {
   letter-spacing:1rem;
   padding-left:1rem;
   font-weight:300;
+  color:#555;
 }
 
 h1 {
