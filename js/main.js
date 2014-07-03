@@ -35,18 +35,25 @@ $(document).ready(function() {
   $('form').submit(function(e) {
     e.preventDefault();
     var age = $('input[name=age]').val();
-    if(!age)
-      age = Math.floor(Math.random()*70);
+
+    var maxYear = 2013;
+    var range = 70;
+
+    var year;
+
+    if(age)
+      year = thisYear - age;
+    else
+      year = maxYear - Math.floor(Math.random()*range);
+
     var gender = $('input[name=gender]').is(':checked') ? 'f' : 'm';
 
-    var year = thisYear - age;
-
     if(year < 1848)
-      $('#name').html('Too old!').removeClass('placeholder');
-    else if(year > 2013)
-      $('#name').html('Too young!').removeClass('placeholder');
-    else
-      $('#name').html(getName(year, gender)).removeClass('placeholder');
+      $('#name').html('Too old!');
+    else if(year > 2013) {
+      $('#name').html('Too young!');
+    } else
+      $('#name').html(getName(year, gender));
   });
 
   $('.navigate').click(function() {
