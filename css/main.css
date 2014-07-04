@@ -233,7 +233,7 @@ input[type=checkbox] + label:after {
   bottom: 0;
   right: 0;
   text-align: center;
-  line-height:6rem;
+  line-height:2; /*for ie*/
 }
 
 input[type=checkbox] + label:before, input[type=checkbox] + label:after {
