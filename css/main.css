@@ -141,7 +141,7 @@ h1 {
   -ms-transform: scale(1.1, 1.1);
 }
 #main {
-  background: url('../img/bg-large.jpg') no-repeat bottom center fixed;
+  background: url('../img/bg-large.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
