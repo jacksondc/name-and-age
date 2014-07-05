@@ -26,7 +26,21 @@ function getName(year, gender) {
 }
 
 $(document).ready(function() {
-  var thisYear = new Date().getFullYear();
+  /*CONTENTEDITABLE CHANGE EVENT*/
+  $('body').on('focus', '[contenteditable]', function() {
+    var $this = $(this);
+    $this.data('before', $this.html());
+    return $this;
+  }).on('blur keyup paste input', '[contenteditable]', function() {
+      var $this = $(this);
+      if ($this.data('before') !== $this.html()) {
+          $this.data('before', $this.html());
+          $this.trigger('change');
+      }
+      return $this;
+  });
+
+  var relativeYear = new Date().getFullYear();
 
   if(Math.random() > 0.5) {
     $('input[name=gender]').prop('checked', true);
@@ -42,16 +56,16 @@ $(document).ready(function() {
     var year;
 
     if(age)
-      year = thisYear - age;
+      year = relativeYear - age;
     else
       year = maxYear - Math.floor(Math.random()*range);
 
     var gender = $('input[name=gender]').is(':checked') ? 'f' : 'm';
 
-    if(year < 1848)
-      $('#name').html('Too old!');
+    if(year < 1880)
+      $('#name').html('Too old');
     else if(year > 2013) {
-      $('#name').html('Too young!');
+      $('#name').html('Too young');
     } else
       $('#name').html(getName(year, gender));
   });
@@ -61,7 +75,10 @@ $(document).ready(function() {
     $('#main').toggleClass('animated');
   });
 
-  $('.this-year').html(thisYear);
+  $('#relative-year').html(relativeYear).change(function(e) {
+    relativeYear = $(e.target).html();
+    console.log('new year is ' + relativeYear);
+  })
 });
 
 function isNumberKey(evt){

@@ -248,6 +248,18 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+#relative-year {
+  border: 1px solid #333;
+  display: inline-block;
+  min-width: 4rem;
+  text-align: center;
+  margin: 0 0.25rem;
+  outline: 0;
+  line-height: 1.1;
+}
+#relative-year:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 /*IMAGES*/
 @media only screen and (min-width: 2881px), only screen and screen and (min-height: 1921px) {
   #main {
