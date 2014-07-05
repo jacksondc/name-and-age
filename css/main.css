@@ -309,3 +309,12 @@ input[type=number] {
     background-image: url("../img/kraken-480.jpg");
   }
 }
+@media only screen and (max-width: 437.5px) {
+  .center {
+    width: 80%;
+  }
+  h1,
+  #main .navigate {
+    font-size: 2rem;
+  }
+}
