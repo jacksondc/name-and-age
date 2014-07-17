@@ -172,7 +172,7 @@ h1 {
   background-size: cover;
 
   position:absolute;
-  left:0;
+  .translate(0%, 0%);
 }
 
 .middle {
@@ -190,17 +190,16 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: -100%;
+  .translate(-100%, 0%);
   top:0;
   background-color: #9dd685;
 }
 
 #info, #main {
-  -webkit-transition: left .5s ease-in-out;
-  -moz-transition: left .5s ease-in-out;
-  -ms-transition: left .5s ease-in-out;
-  -o-transition: left .5s ease-in-out;
-  transition: left .5s ease-in-out;
+   -webkit-transition: -webkit-transform 0.5s ease-in-out; /* Changed here */
+     -moz-transition: -moz-transform 0.5s ease-in-out;
+       -o-transition: -o-transform 0.5s ease-in-out;
+          transition: transform 0.5s ease-in-out;
 
   display: table;
   width: 100%;
@@ -208,11 +207,11 @@ h1 {
 }
 
 #info.animated {
-  left:0;
+  .translate(0%, 0%);
 }
 
 #main.animated {
-  left:100%;
+  .translate(100%, 0%);
 }
 
 input[type=checkbox] {
@@ -377,4 +376,13 @@ input {
   h1, #main .navigate {
     font-size:2rem;
   }
+}
+
+/* MIXINS */
+
+.translate (@x, @y:0) {
+	-webkit-transform:       translate(@x, @y);
+	-moz-transform: 	 translate(@x, @y);
+	-ms-transform: 		 translate(@x, @y);
+	-o-transform: 		 translate(@x, @y);
 }
