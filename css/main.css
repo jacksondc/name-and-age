@@ -20,6 +20,7 @@ button,
 #name {
   line-height: 5rem;
   height: 5rem;
+  background-color: rgba(200, 200, 200, 0.75);
 }
 * {
   box-sizing: content-box;
@@ -116,6 +117,12 @@ h2 {
   padding-left: 1rem;
   font-weight: 300;
   color: #555;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 body {
   overflow: hidden;
@@ -222,6 +229,7 @@ input[type=checkbox] + label {
   user-select: none;
   width: 50%;
   height: 6rem;
+  overflow: hidden;
 }
 input[type=checkbox] + label:before,
 input[type=checkbox] + label:after {
@@ -246,14 +254,34 @@ input[type=checkbox] + label:after {
 input[type=checkbox] + label:before {
   background-color: #4F9BC4;
   content: attr(data-off);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
 }
 input[type=checkbox] + label:after {
   background-color: #D279A4;
   content: attr(data-on);
-  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 input[type=checkbox]:checked + label:after {
-  opacity: 1;
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+}
+input[type=checkbox]:checked + label:before {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
 }
 input[type=checkbox] + label:hover:before {
   background-color: #69B5DE;
